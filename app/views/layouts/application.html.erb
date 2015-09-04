@@ -52,7 +52,11 @@
         <% if user_signed_in? %>
             <div class="buttons">
               <%= link_to "New Post", new_post_path, :class => "btn btn-default" %>
-              <button class="button">Log Out</button>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "btn btn-default") %>
+            </div>
+        <% else %>
+            <div class="buttons">
+              <%= link_to('Login', new_user_session_path, :class => "btn btn-default")  %>
             </div>
         <% end %>
       </div>
