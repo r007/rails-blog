@@ -2,8 +2,7 @@
 
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple blog build on Rails. Very simple to install and configure.
 
 Things you may want to cover:
 
