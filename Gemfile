@@ -7,6 +7,8 @@ gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
+# Authentification
+gem 'devise'
 # Compass framework
 gem 'compass-rails'
 # Use Uglifier as compressor for JavaScript assets
