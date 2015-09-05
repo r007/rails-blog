@@ -1,72 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>RailsBlog</title>
+
+  <title>Rails Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Custom Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
 </head>
+
 <body>
-    <div id="sidebar">
-        <div class="logo">
-            <%= link_to root_path do %>
-                <div class="box">RB</div>
-                <div class="text"><span class="first">Rails</span> <span class="second">Blog</span></div>
-            <% end %>
-        </div>
-        <!--<div id="logo">
 
-            <%= image_tag "logo.svg" %>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2"><span class="fa fa-bars"></span></button>
+      <%= link_to "Rails Blog", root_path, :class => "navbar-brand" %>
+    </div>
 
-        </div> -->
-
-      <ul>
-        <li class="category">Website</li>
+    <div class="collapse navbar-collapse" id="navbar-collapse-2">
+      <ul class="nav navbar-nav">
         <li><%= link_to "Blog", root_path %></li>
         <li><%= link_to "About", about_path %></li>
       </ul>
-
-      <ul>
-        <li class="category">Social</li>
-        <li><a href="https://twitter.com/act_as_samurai">Twitter</a></li>
-        <li><a href="https://github.com/r007">Github</a></li>
-        <li><a href="mailto:moninsergei@gmail.com">Email</a></li>
-      </ul>
-
-      <% if !user_signed_in? %>
-        <p class="sign_in">Admin Login</p>
+      <% if user_signed_in? %>
+          <ul class="nav navbar-nav navbar-right navbar-icons">
+            <li>
+              <%= link_to new_post_path do %>
+                <span class="fa-pencil fa"></span><span class="hidden-lg">New post</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, :method => :delete do %>
+                  <span class="fa-sign-out fa"></span><span class="hidden-lg">Log out</span>
+              <% end %>
+            </li>
+          </ul>
       <% end %>
-    </div>
 
-    <div id="main_content">
-      <div id="header">
-        <% if current_page?(root_path) %>
-            <p>All posts</p>
-        <% elsif current_page?(about_path) %>
-            <p>About</p>
-        <% else %>
-            <%= link_to "Back to All Posts", root_path %>
-        <% end %>
-
+      <p class="navbar-text navbar-right">
         <% if user_signed_in? %>
-            <div class="buttons">
-              <%= link_to "New Post", new_post_path, :class => "btn btn-default" %>
-              <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => "btn btn-default") %>
-            </div>
+            Hi ya, <a href="#fakeLink" class="navbar-link">Billy Bones</a>
         <% else %>
-            <div class="buttons">
-              <%= link_to('Login', new_user_session_path, :class => "btn btn-default")  %>
-            </div>
+            You're anonymous. <%= link_to('Want to log in?', new_user_session_path, :class => "navbar-link")  %>
         <% end %>
+      </p>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<% flash.each do |name, msg| %>
+    <%= content_tag(:div, msg, class: "alert") %>
+<% end %>
+
+    <%= yield %>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          <li>
+            <a href="#">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-vk fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
       </div>
-
-      <% flash.each do |name, msg| %>
-        <%= content_tag(:div, msg, class: "alert") %>
-      <% end %>
-
-      <%= yield %>
     </div>
+  </div>
+</footer>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/clean-blog.min.js"></script>
 
 </body>
+
 </html>

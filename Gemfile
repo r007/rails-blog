@@ -7,10 +7,18 @@ gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
+# Drunken parrot UI kit
+gem 'drunken_parrot_flat_ui_lite-rails'
+# Font Awesome icons
+gem "font-awesome-rails"
 # Authentification
 gem 'devise'
 # Compass framework
 gem 'compass-rails'
+# Pagination
+gem "kaminari"
+# Lorem ipsum generator
+gem "betterlorem"
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
