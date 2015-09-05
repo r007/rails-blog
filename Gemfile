@@ -16,9 +16,11 @@ gem 'devise'
 # Compass framework
 gem 'compass-rails'
 # Pagination
-gem "kaminari"
+gem 'kaminari'
+# Sanitize all html
+gem 'sanitize'
 # Lorem ipsum generator
-gem "betterlorem"
+gem 'betterlorem'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
