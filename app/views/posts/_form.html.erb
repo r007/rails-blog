@@ -1,25 +1,38 @@
+<% if @post.errors.any? %>
+    <div id="errors" class="alert-danger alert">
+      <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving</h2>
+      <ul>
+        <% @post.errors.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
 <%= form_for @post do |f| %>
-    <% if @post.errors.any? %>
-        <div id="errors">
-          <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving</h2>
-          <ul>
-            <% @post.errors.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-    <p>
-      <%= f.label :title %><br>
-      <%= f.text_field :title %>
+    <p class="help-block">
+      Fields marked with a <span class="required">*</span> are required.
     </p>
 
-    <p>
-      <%= f.label :body %><br>
-      <%= f.text_area :body %>
-    </p>
+    <div class="form-group input-required" id="form-section-title">
+      <%= f.label :title %>
 
-    <p>
-      <%= f.submit %>
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-header"></i></div>
+        <%= f.text_field :title, class: "form-control" %>
+        <span></span>
+      </div>
+    </div>
+    <!-- #form-section-title .form-section -->
+
+    <fieldset id="form-section-body">
+      <div class="form-group">
+        <%= f.label :body %><br>
+        <%= f.text_area :body, class: "text-small", cold: 45, rows: 8 %>
+      </div>
+    </fieldset>
+    <!-- #form-section-comment -->
+    <p class="form-submit">
+      <%= f.submit class: "btn btn-primary btn-embossed" %>
     </p>
 <% end %>

@@ -12,6 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require froala_editor.min.js
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+$(function() {
+    $('textarea#post_body').editable({
+        inlineMode: false
+    })
+});

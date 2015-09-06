@@ -10,6 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require froala_editor.min.css
+ *= require froala_style.min.css
  *= require_tree .
  *= require_self
  */
@@ -18,6 +20,18 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "drunken-parrot-lite/drunken-parrot";
+
+.input-required span {
+  width: 27px;
+  height: 76px;
+  right: 0px;
+  top: -50px;
+  z-index: 100;
+}
+
+#post_body, .froala-wrapper {
+  min-height: 300px;
+}
 
 #login { display: none; }
 .login,

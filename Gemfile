@@ -17,8 +17,8 @@ gem 'devise'
 gem 'compass-rails'
 # Pagination
 gem 'kaminari'
-# Sanitize all html
-gem 'sanitize'
+# Rich text editor
+gem "wysiwyg-rails"
 # Lorem ipsum generator
 gem 'betterlorem'
 # Use Uglifier as compressor for JavaScript assets
