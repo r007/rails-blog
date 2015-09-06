@@ -17,8 +17,13 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
-$(function() {
+var ready;
+ready = function() {
     $('textarea#post_body').editable({
-        inlineMode: false
+        inlineMode: false,
+        height: 300
     })
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
