@@ -1,15 +1,22 @@
-<div class="comment clearfix">
-  <div class="comment_content">
-    <p class="comment_name"><strong><%= comment.name %></strong></p>
-    <p class="comment_body"><%= comment.body %></p>
-    <p class="comment_time"><%= time_ago_in_words(comment.created_at) %> Ago</p>
-  </div>
-
-  <% if user_signed_in? %>
-      <p><%= link_to 'Delete', [comment.post, comment],
-                    method: :delete,
-                    class: "button",
-                    data: { confirm: "Are you sure?" } %>
+<li class="media">
+  <a class="pull-left" href="#">
+    <%= image_tag "business_user.png", class: "media-object img-circle", alt: "Avatar" %>
+  </a>
+  <div class="media-body">
+    <div class="well well-lg">
+      <h4 class="media-heading text-uppercase reviews"><%= comment.name %></h4>
+      <p class="media-date text-uppercase reviews list-inline">
+        <%= time_ago_in_words(comment.created_at) %> Ago
       </p>
-  <% end %>
-</div>
+      <p class="media-comment">
+        <%= sanitize comment.body %>
+      </p>
+      <% if user_signed_in? %>
+          <%= link_to 'Delete', [comment.post, comment],
+                         method: :delete,
+                         class: "btn btn-info btn-circle text-uppercase",
+                         data: { confirm: "Are you sure?" } %>
+      <% end %>
+    </div>
+  </div>
+</li>
