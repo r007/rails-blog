@@ -21,6 +21,11 @@
 @import "font-awesome";
 @import "drunken-parrot-lite/drunken-parrot";
 
+#comment_body,
+#post_body {
+  width: 100%;
+}
+
 .input-required span {
   width: 27px;
   height: 76px;

@@ -22,7 +22,15 @@ ready = function() {
     $('textarea#post_body').editable({
         inlineMode: false,
         height: 300
-    })
+    });
+
+    $('textarea#comment_body').editable({
+        inlineMode: false,
+        height: 300,
+
+        // Set custom buttons with separator between them.
+        buttons: ['undo', 'redo' , 'sep', 'bold', 'italic', 'underline']
+    });
 };
 
 $(document).ready(ready);

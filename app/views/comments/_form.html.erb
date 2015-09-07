@@ -1,15 +1,27 @@
-  <%= form_for([@post, @post.comments.build]) do |f| %>
-      <p>
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
-      </p>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+    <p class="help-block">
+      Fields marked with a <span class="required">*</span> are required.
+    </p>
 
-      <p>
+    <div class="form-group input-required" id="form-section-name">
+      <%= f.label :name %>
+
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-header"></i></div>
+        <%= f.text_field :name, class: "form-control" %>
+        <span></span>
+      </div>
+    </div>
+    <!-- #form-section-name .form-section -->
+
+    <fieldset id="form-section-body">
+      <div class="form-group">
         <%= f.label :body %><br>
-        <%= f.text_area :body %>
-      </p>
-
-      <p>
-        <%= f.submit 'Submit', :class => 'btn btn-primary btn-embossed' %>
-      </p>
-  <% end %>
+        <%= f.text_area :body, class: "text-small", cold: 45, rows: 8 %>
+      </div>
+    </fieldset>
+    <!-- #form-section-comment -->
+    <p class="form-submit">
+      <%= f.submit 'Submit', class: "btn btn-primary btn-embossed" %>
+    </p>
+<% end %>
