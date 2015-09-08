@@ -12,6 +12,8 @@ gem 'drunken_parrot_flat_ui_lite-rails'
 gem "font-awesome-rails"
 # Authentification
 gem 'devise'
+# Pretty URLs
+gem 'friendly_id'
 # Compass framework
 gem 'compass-rails'
 # Pagination

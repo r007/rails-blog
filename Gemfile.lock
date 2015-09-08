@@ -89,6 +89,8 @@ GEM
     ffi (1.9.10)
     font-awesome-rails (4.4.0.0)
       railties (>= 3.2, < 5.0)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -219,6 +221,7 @@ DEPENDENCIES
   devise
   drunken_parrot_flat_ui_lite-rails
   font-awesome-rails
+  friendly_id
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
