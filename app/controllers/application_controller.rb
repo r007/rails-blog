@@ -14,5 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def index
+    @user = User.find(2)
   end
 end
