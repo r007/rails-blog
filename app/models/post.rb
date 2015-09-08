@@ -5,4 +5,12 @@ class Post < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
+
+  def should_generate_new_friendly_id?
+    if !slug? || title_changed?
+      true
+    else
+      false
+    end
+  end
 end
