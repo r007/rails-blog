@@ -54,7 +54,7 @@
 
       <p class="navbar-text navbar-right">
         <% if user_signed_in? %>
-            Hi ya, <a href="#fakeLink" class="navbar-link">Billy Bones</a>
+            Hi ya, <%= link_to "Billy Bones", edit_user_registration_path, class: "navbar-link" %>
         <% else %>
             You're anonymous. <%= link_to('Want to log in?', new_user_session_path, :class => "navbar-link")  %>
         <% end %>
