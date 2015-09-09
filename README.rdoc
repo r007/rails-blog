@@ -1,4 +1,6 @@
 {<img src="https://travis-ci.org/r007/rails-blog.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/r007/rails-blog]
+{<img src="https://codeclimate.com/github/r007/rails-blog/badges/gpa.svg" />}[https://codeclimate.com/github/r007/rails-blog]
+{<img src="https://codeclimate.com/github/r007/rails-blog/badges/coverage.svg" />}[https://codeclimate.com/github/r007/rails-blog/coverage]
 
 == README
 
