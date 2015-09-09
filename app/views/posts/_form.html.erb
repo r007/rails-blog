@@ -32,7 +32,11 @@
           <%= f.label :remove_image %>
         </div>
     <% end %>
-    <%= f.attachment_field :image, direct: true, data: { remote_id: :post_image_cache_id } %>
+
+    <div class="form-group" id="form-section-attachment">
+      <%= f.attachment_field :image, direct: true, data: { remote_id: :post_image_cache_id } %>
+    </div>
+    <!-- #form-section-attachment .form-section -->
 
     <fieldset id="form-section-body">
       <div class="form-group">

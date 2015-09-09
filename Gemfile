@@ -6,6 +6,8 @@ gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
+# Bootstrap Filestyle
+gem 'bootstrap-filestyle-rails'
 # Drunken parrot UI kit
 gem 'drunken_parrot_flat_ui_lite-rails'
 # Font Awesome icons
