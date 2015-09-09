@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   validates :title, :presence => true, length: { minimum: 5 }
   validates :body, :presence => true
 
+  attachment :image, type: :image
+
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 

@@ -25,6 +25,15 @@
     </div>
     <!-- #form-section-title .form-section -->
 
+    <% if @post.image_id? %>
+        <%= image_tag attachment_url(@post, :image, :fill, 150, 150) %>
+        <div class="check_box">
+          <%= f.check_box :remove_image %>
+          <%= f.label :remove_image %>
+        </div>
+    <% end %>
+    <%= f.attachment_field :image, direct: true, data: { remote_id: :post_image_cache_id } %>
+
     <fieldset id="form-section-body">
       <div class="form-group">
         <%= f.label :body %><br>

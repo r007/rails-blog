@@ -14,6 +14,9 @@ gem "font-awesome-rails"
 gem 'devise'
 # Pretty URLs
 gem 'friendly_id'
+# Image upload
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 # Compass framework
 gem 'compass-rails'
 # Pagination
