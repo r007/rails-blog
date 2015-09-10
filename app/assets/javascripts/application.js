@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
 //= require jquery
 //= require jquery_ujs
 //= require refile
@@ -18,6 +17,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap-filestyle
 //= require summernote
+//= require_tree .
 
 var ready;
 ready = function() {
@@ -37,6 +37,33 @@ ready = function() {
     $(":file").filestyle({
         input: false
     });
+
+    var MQL = 1170;
+
+    //primary navigation slide-in effect
+    if ($(window).width() > MQL) {
+        var headerHeight = $('.navbar-custom').height();
+        $(window).on('scroll', {
+                previousTop: 0
+            },
+            function() {
+                var currentTop = $(window).scrollTop();
+                //check if user is scrolling up
+                if (currentTop < this.previousTop) {
+                    //if scrolling up...
+                    if (currentTop > 0 && $('.navbar-custom').hasClass('is-fixed')) {
+                        $('.navbar-custom').addClass('is-visible');
+                    } else {
+                        $('.navbar-custom').removeClass('is-visible is-fixed');
+                    }
+                } else {
+                    //if scrolling down...
+                    $('.navbar-custom').removeClass('is-visible');
+                    if (currentTop > headerHeight && !$('.navbar-custom').hasClass('is-fixed')) $('.navbar-custom').addClass('is-fixed');
+                }
+                this.previousTop = currentTop;
+            });
+    }
 };
 
 $(document).ready(ready);
