@@ -43,7 +43,7 @@ ready = function() {
     //primary navigation slide-in effect
     if ($(window).width() > MQL) {
         var headerHeight = $('.navbar-custom').height();
-        $(window).on('scroll', {
+        $(window).off("scroll").on('scroll', {
                 previousTop: 0
             },
             function() {
