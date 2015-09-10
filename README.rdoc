@@ -9,7 +9,7 @@ This is a simple blog build on Rails. Very simple to install and configure.
 
 == Installation (for Developer)
 
-requirements:
+Requirements:
 
 * Windows or UNIX like OS (Mac OS X, Linux, etc...)
 * Ruby 2.0.0-p353 or higher.
@@ -17,25 +17,21 @@ requirements:
 * ImageMagick
 * Git
 
-This blog uses the [MiniMagick](https://github.com/minimagick/minimagick) gem, which requires
-[ImageMagick](http://imagemagick.org/) (or [GraphicsMagick](http://www.graphicsmagick.org/)) to be installed.
+This blog uses the {MiniMagick}[https://github.com/minimagick/minimagick] gem, which requires
+{ImageMagick}[http://imagemagick.org/] (or {GraphicsMagick}[http://www.graphicsmagick.org/]) to be installed.
 To install it simply run:
 
-``` sh
-brew install imagemagick # OS X
-sudo apt-get install imagemagick # Ubuntu
-```
+    brew install imagemagick # OS X
+    sudo apt-get install imagemagick # Ubuntu
 
 And after this execute below commands.
 
-``` sh
-git clone https://github.com/r007/rails-blog.git
-cd rails-blog
-bundle install
-rake db:migrate
-rake db:seed
-rails s
-```
+    git clone https://github.com/r007/rails-blog.git
+    cd rails-blog
+    bundle install
+    rake db:migrate
+    rake db:seed
+    rails s
 
 Access <tt>localhost:3000</tt> with your web browser.
 
