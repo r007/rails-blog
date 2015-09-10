@@ -6,26 +6,47 @@
 
 This is a simple blog build on Rails. Very simple to install and configure.
 
-Things you may want to cover:
 
-* Ruby version
+== Installation (for Developer)
 
-* System dependencies
+requirements:
 
-* Configuration
+* Windows or UNIX like OS (Mac OS X, Linux, etc...)
+* Ruby 2.0.0-p353 or higher.
+* Bundler
+* ImageMagick
+* Git
 
-* Database creation
+This blog uses the [MiniMagick](https://github.com/minimagick/minimagick) gem, which requires
+[ImageMagick](http://imagemagick.org/) (or [GraphicsMagick](http://www.graphicsmagick.org/)) to be installed.
+To install it simply run:
 
-* Database initialization
+``` sh
+brew install imagemagick # OS X
+sudo apt-get install imagemagick # Ubuntu
+```
 
-* How to run the test suite
+And after this execute below commands.
 
-* Services (job queues, cache servers, search engines, etc.)
+``` sh
+git clone https://github.com/r007/rails-blog.git
+cd rails-blog
+bundle install
+rake db:migrate
+rake db:seed
+rails s
+```
 
-* Deployment instructions
+Access <tt>localhost:3000</tt> with your web browser.
 
-* ...
+== Contributing
 
+1. Fork it
+2. Create your feature branch (<tt>git checkout -b my-new-feature</tt>)
+3. Commit your changes (<tt>git commit -am 'Add some feature'</tt>)
+4. Push to the branch (<tt>git push origin my-new-feature</tt>)
+5. Create new Pull Request
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== License
+
+MIT (see link:LICENSE)
