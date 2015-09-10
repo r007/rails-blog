@@ -10,8 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require froala_editor.min.css
- *= require froala_style.min.css
  *= require_tree .
  *= require_self
  */
@@ -20,10 +18,16 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "drunken-parrot-lite/drunken-parrot";
+@import "summernote";
 
 #comment_body,
 #post_body {
   width: 100%;
+}
+
+.note-editor {
+  min-height: 300px;
+  overflow: visible;
 }
 
 input.btn-primary {

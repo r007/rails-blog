@@ -13,25 +13,25 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
-//= require froala_editor.min.js
 //= require refile
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-filestyle
+//= require summernote
 
 var ready;
 ready = function() {
-    $('textarea#post_body').editable({
-        inlineMode: false,
-        height: 300
-    });
+    $('textarea#post_body').summernote();
 
-    $('textarea#comment_body').editable({
-        inlineMode: false,
-        height: 300,
+    $('textarea#comment_body').summernote({
+        toolbar: [
+            //[groupname, [button list]]
 
-        // Set custom buttons with separator between them.
-        buttons: ['undo', 'redo' , 'sep', 'bold', 'italic', 'underline']
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['font', ['strikethrough']],
+            ['para', ['ul', 'ol']],
+            ['insert', ['link']]
+        ]
     });
 
     $(":file").filestyle({

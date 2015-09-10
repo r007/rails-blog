@@ -11,20 +11,20 @@ gem 'bootstrap-filestyle-rails'
 # Drunken parrot UI kit
 gem 'drunken_parrot_flat_ui_lite-rails'
 # Font Awesome icons
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 # Authentification
 gem 'devise'
 # Pretty URLs
 gem 'friendly_id'
 # Image upload
-gem "refile", require: "refile/rails"
-gem "refile-mini_magick"
+gem 'refile', require: 'refile/rails'
+gem 'refile-mini_magick'
 # Compass framework
 gem 'compass-rails'
 # Pagination
 gem 'kaminari'
 # Rich text editor
-gem "wysiwyg-rails"
+gem 'summernote-rails'
 # Lorem ipsum generator
 gem 'betterlorem'
 # Use Uglifier as compressor for JavaScript assets
