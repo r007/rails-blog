@@ -1,7 +1,7 @@
 <%= form_for([@post, @post.comments.build]) do |f| %>
     <% if @comment && @comment.errors.any? %>
         <div id="errors" class="alert-danger alert">
-          <h2><%= pluralize(@comment.errors.count, "error") %> prevented this comment from saving</h2>
+          <h3><%= pluralize(@comment.errors.count, "error") %> prevented this comment from saving</h3>
           <ul>
             <% @comment.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -27,7 +27,7 @@
 
     <fieldset id="form-section-body">
       <div class="form-group">
-        <%= f.label :body %><br>
+        <%= f.label :body %>
         <%= f.text_area :body, class: "text-small", cold: 45, rows: 8 %>
       </div>
     </fieldset>

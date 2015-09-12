@@ -1,22 +1,24 @@
-<li class="media">
-  <a class="pull-left" href="#">
-    <%= image_tag "business_user.png", class: "media-object img-circle", alt: "Avatar" %>
-  </a>
-  <div class="media-body">
-    <div class="well well-lg">
-      <h4 class="media-heading text-uppercase reviews"><%= comment.name %></h4>
-      <p class="media-date text-uppercase reviews list-inline">
-        <%= time_ago_in_words(comment.created_at) %> Ago
-      </p>
-      <p class="media-comment">
-        <%= sanitize comment.body %>
-      </p>
-      <% if user_signed_in? %>
-          <%= link_to 'Delete', [comment.post, comment],
-                         method: :delete,
-                         class: "btn btn-info btn-circle text-uppercase",
-                         data: { confirm: "Are you sure?" } %>
-      <% end %>
-    </div>
-  </div>
-</li>
+<% if comment.save %>
+    <li class="media">
+      <a class="pull-left" href="#">
+        <%= image_tag "business_user.png", class: "media-object img-circle", alt: "Avatar" %>
+      </a>
+      <div class="media-body">
+        <div class="well well-lg">
+          <h4 class="media-heading text-uppercase reviews"><%= comment.name %></h4>
+          <p class="media-date text-uppercase reviews list-inline">
+            <%= time_ago_in_words(comment.created_at) %> Ago
+          </p>
+          <p class="media-comment">
+            <%= sanitize comment.body %>
+          </p>
+          <% if user_signed_in? %>
+              <%= link_to 'Delete', [comment.post, comment],
+                             method: :delete,
+                             class: "btn btn-info btn-circle text-uppercase",
+                             data: { confirm: "Are you sure?" } %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+<% end %>
