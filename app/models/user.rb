@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
             presence: true,
             length: { minimum: 4 },
             uniqueness: {
-                case_sensitive: false
+              case_sensitive: false
             }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
             presence: true,
             format: { with: VALID_EMAIL_REGEX },
             uniqueness: {
-                case_sensitive: false
+              case_sensitive: false
             }
 
   validates :password, presence: true, length: { minimum: 8 }
@@ -35,5 +35,4 @@ class User < ActiveRecord::Base
       where(conditions.to_hash).first
     end
   end
-
 end
