@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @post = Post.friendly.find(params[:post_id])
     @comment = @post.comments.create(params[:comment].permit(:name, :body))
     if @comment.errors.any?
-      render "posts/show"
+      render 'posts/show'
     else
       redirect_to post_path(@post)
     end
