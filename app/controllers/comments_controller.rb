@@ -1,3 +1,4 @@
+# Handles requests for creating/deleting comments
 class CommentsController < ApplicationController
   def create
     @post = Post.friendly.find(params[:post_id])

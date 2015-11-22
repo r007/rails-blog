@@ -1,3 +1,4 @@
+# Handles requests for viewing/creating/editing/deleting posts
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -48,6 +49,7 @@ class PostsController < ApplicationController
   end
 
   private
+
     def post_params
       params.require(:post).permit(:title, :body, :image, :image_cache_id, :remove_image)
     end
